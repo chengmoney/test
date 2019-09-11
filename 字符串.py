@@ -95,6 +95,39 @@ print(s.title())  # capitalize()是对该字符串的第一个字母操作 # tit
 # S.istitle() #单词首字母是否大写的，且其它为小写
 # S.isupper() #S中的字母是否全是大写
 # S.islower() #S中的字母是否全是小写
+s1 = 'let'
+s2 = 'Let'
+s3 = 'LET'
+print(s1.istitle())
+print(s2.istitle())
+print(s1.islower())
+print(s3.isupper())
+
+s4 = 'Are you a sb'
+print(s4.istitle())
+print(s4.title())
+
+# 字符串的编号 从左边第一个开始是0号，向下依次按照整数增加,包括空格。从右往左第一个是-1，最后一个为-12
+a = 'hello,worl d'
+b = len(a)
+print(b)
+print(a[0], a[1], a[5], a[10])
+print(a[-12], a[-11], a[-7], a[-2])
+
+# 字符串的截取  a[num1, num2)
+a = 'hello,worl d'
+print(a[2:5])  # 截取 llo
+print(a[:])  # 截取全部
+print(a[2:])  # 截取llo,worl d
+print(a[:5])  # 截取hello
+
+# 去掉字符串左右两边的空格 a.strip()去掉两边的空格  a.lstrip()去掉左边的空格  a.rstrip()去掉右边的空格
+a = '  你好  '
+print(a.strip())
+print(a.lstrip())
+print(a.rstrip())
+
+
 
 
 
