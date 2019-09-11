@@ -57,3 +57,45 @@ you are a SB
 print('you are a sb \r sb')
  sb
 '''
+# 字符串的格式化 %d 表示数字 %s 表示字符串
+
+print('%s今年%d岁' % ('小王', 30))
+name = '小王'
+age = 30
+print('%s今年%d岁' % (name, age))
+
+text = input()
+le = len(text)
+print('%s有%d个字母' % (text, le))
+
+# S.upper() #S中的字母大写
+# S.lower() #S中的字母小写
+# S.capitalize() #首字母大写
+
+s = 'small'
+print(s.upper())
+print(s)  # 不改变原有变量
+
+b = s.upper()
+print(b.lower())
+print(b)  # 不改变原有变量
+
+print(s.capitalize())
+print(s.title())
+
+# capitalize() and title() 的区别
+s = 'you are a sb'
+print(s.capitalize())
+print(s.title())  # capitalize()是对该字符串的第一个字母操作 # title()是对该字符串中的所有单词的首字母操作
+'''
+    You are a sb
+    You Are A Sb
+'''
+
+# S.istitle() #单词首字母是否大写的，且其它为小写
+# S.isupper() #S中的字母是否全是大写
+# S.islower() #S中的字母是否全是小写
+
+
+
+
