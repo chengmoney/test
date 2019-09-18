@@ -137,6 +137,65 @@ if ind in lt:
 else:
     print('"%s"元素不在list中' % ind)
 
+# range(start,	stop[,	step])是一个内置函数 生成一个数组
+lt = range(5)
+print(lt)  # python3中range()返回值不是一个列表  打印出来的结果:range(0, 5)
+
+  #  要打印出list需要用list转化
+lt = range(5)  # range(5) == range(0, 5, 1)
+print(list(range(5)))  # [0, 1, 2, 3, 4]
+
+ # range()函数中生成的数组不包含stop的值
+
+
+# list的排序 list.sort(cmp=None,	key=None,	reverse=False)
+# sorted(iterable[,	cmp[,	key[,	reverse]]])
+
+# 在python3中，sort是对于列表类型的排序函数，函数原型为：L.sort(key=None, reverse=False)，
+# 该方法没有返回值，是对列表的就地排序。
+lt = [1, 4, 6, 3, 2]
+lt.sort()  # 直接改变了list的顺序
+print(lt)
+lt = [1, 4, 6, 3, 2]
+lt.sort(reverse=True)  # True and False 需要大写.不能小写 # 倒序
+print(lt) # [6, 4, 3, 2, 1]
+
+# 2、python3中sorted函数取消了对cmp的支持,sorted 可以对所有可迭代的对象进行排序操作，
+# 尤其是可以对字典进行排序，其形式为：sorted(iterable, key=None, reverse=False)。sorted函数是有返回值的。
+lt = [1, 4, 6, 3, 2]
+print(sorted(lt, reverse=True))  # 倒序
+
+lt = [1, 4, 6, 3, 2]
+lt1 = sorted(lt)  # 正序
+print(lt1)  # [1, 2, 3, 4, 6]
+
+# list 和 str 的区别
+# list和str的最大区别是：list是可以改变的，str不可变。
+# list和str的相同点是: 都是序列型数据
+
+# list和str转化
+# str.split split(self, /, sep=None, maxsplit=-1) 将文本分隔成list
+line = 'you are a sb.\nyes,you are right.'
+print(line)
+print(line.split('.', 1))  # ['you are a sb', '\nyes,you are right.']
+
+line = 'you are a sb.\nyes,you are right.'
+print(line)
+print(line.split(' ', 1))  # ['you', 'are a sb.\nyes,you are right.'] 1表示最多分隔2次
+
+line = 'you are a sb.\nyes,you are right.'
+print(line)
+print(line.split())  # 默认按照分隔符来分隔单词
+
+# 将list合成文本 "[sep]".join(list) sep表示加入的分隔符
+line = 'you are a sb.\nyes,you are right.'
+lt = line.split()
+print(lt)
+print(' '.join(lt))  # you are a sb. yes,you are right.
+
+
+
+
 
 
 
