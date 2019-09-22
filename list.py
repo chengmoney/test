@@ -194,10 +194,25 @@ print(lt)
 print(' '.join(lt))  # you are a sb. yes,you are right.
 
 
+# list解析
+# 可以用简单的语言写出list
+# 将下面的语句用list解析写出来
+lt = []
+for i in range(1, 101):
+    if i % 3 == 0:
+        lt.append(i)
+print(lt)
+print("100以内总共有%d个被3整除的数" % len(lt))
+# 改写后的语句
+lt = [i for i in range(1, 101) if i % 3 == 0]
+print(lt)
+print("100以内总共有%d个被3整除的数" % len(lt))
 
 
-
-
+# 去掉 mybag = [' glass',' apple','green leaf ']中元素中的空格
+mybag = [' glass', ' apple', 'green leaf ']
+new_mybag = [i.strip() for i in mybag]
+print(new_mybag)
 
 
 
