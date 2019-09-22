@@ -174,7 +174,7 @@ print(lt1)  # [1, 2, 3, 4, 6]
 # list和str的相同点是: 都是序列型数据
 
 # list和str转化
-# str.split split(self, /, sep=None, maxsplit=-1) 将文本分隔成list
+# str.split(self, /, sep=None, maxsplit=-1) 将文本分隔成list
 line = 'you are a sb.\nyes,you are right.'
 print(line)
 print(line.split('.', 1))  # ['you are a sb', '\nyes,you are right.']
