@@ -208,11 +208,47 @@ lt = [i for i in range(1, 101) if i % 3 == 0]
 print(lt)
 print("100以内总共有%d个被3整除的数" % len(lt))
 
-
 # 去掉 mybag = [' glass',' apple','green leaf ']中元素中的空格
 mybag = [' glass', ' apple', 'green leaf ']
 new_mybag = [i.strip() for i in mybag]
 print(new_mybag)
+
+# 到1到9的每个整数的平方
+lt = [i ** 2 for i in range(1, 10)]
+print(lt)
+
+# enumerate函数 可以同时得到元素编号和元素怎么办 enumerate()函数是返回值type类型为enumerate,需用list转换
+# 得到序列中的每个元素的编号和内容
+week = ['Monday', 'Sunday', 'Friday']
+for i in range(len(week)):
+    print('%d' % i + ':' + week[i])
+
+week = ['Monday', 'Sunday', 'Friday']
+lt = list(enumerate(week))
+print(lt)  # [(0, 'Monday'), (1, 'Sunday'), (2, 'Friday')]
+
+week = ['Monday', 'Sunday', 'Friday']
+lt = list(enumerate(week, start=1))  # 可以用start改变序号开始值
+print(lt)  # [(1, 'Monday'), (2, 'Sunday'), (3, 'Friday')]
+
+# 用函数的方法写
+
+
+def couple(pos, element):
+    return "%d : %s" % (pos, element)
+
+
+week = ['Monday', 'Sunday', 'Friday']
+lt = [couple(i, n) for i, n in enumerate(week)]
+print(lt)   # ['0 : Monday', '1 : Sunday', '2 : Friday']
+
+# 错误写法
+week = ['Monday', 'Sunday', 'Friday']
+lt = []
+lt = [lt.append('%d : %s' % (i, n)) for i, n in enumerate(week)]
+print(lt)  # [None, None, None]
+
+
 
 
 
