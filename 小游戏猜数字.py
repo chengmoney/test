@@ -21,3 +21,22 @@ while pd == 1:
     else:
         text = input("您输入的数据有误,请您重新输入一个0-9的整数")
 
+
+# 不用循环的猜数字
+    import random
+num = random.randint(0, 11)
+print('请输入一个0到10的自然数')
+inside_num = int(input())
+if num == inside_num:
+    print("猜对了!")
+elif num > inside_num:
+    print('你输入的数字太小')
+    print('随机数字为%d' % num)
+elif num < inside_num:
+    print('你输入的数字太大')
+    print('随机数字数字为%d' % num)
+
+
+
+
+
