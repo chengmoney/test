@@ -10,18 +10,42 @@
 
 def isfloat(s):
     s = str(s)
+    if s.isdigit():  # 判断是否为正整数
+        return 2
+    if s.count('-') == 1 and s.startswith('-'):  # 判断是否为负整数
+        new_s = s.split('-')[-1]
+        if new_s.isdigit():
+            return 3
     if s.count(".") == 1:  # 数字只有一个小数点
-        new_str = s.split('.')
-        right_str = new_str[-1]
-        left_str = new_str[0]
-        if right_str.isdigit():
-            if left_str.isdigit():
-                return True
-            elif left_str.count('-') == 1 and left_str.startswith("-"):
-                tmp_num = left_str.split('-')[-1]
-                if tmp_num.isdigit():
-                    return True
+        new_str = s.split('.')  # 将字符串按照.分隔成一个list
+        right_str = new_str[-1]  # .右边的字符串
+        left_str = new_str[0]  # .左边的字符串
+        if right_str.isdigit():  # 判断右边字符串是否全部为数字组成
+            if left_str.isdigit():  # 如果左右两边的字符串都为数字组成则为一个正有理数
+                return 4
+            elif left_str.count('-') == 1 and left_str.startswith("-"):  # 如果左边的不全为数字,有可能为负数.存在一个负号,且左边字符串第一个字符为-
+                tmp_num = left_str.split('-')[-1]  # 分隔负号两边的字符串,并取出负号右边的字符串
+                if tmp_num.isdigit():  # 如果负号右边的字符串全部为数字,则为负有理数
+                    return 4
     return False
+
+
+pd = 1
+while pd == 1:
+    text = input("请输入内容!")
+    if isfloat(text) == 2 or isfloat(text) == 3:
+        if int(text) % 2 == 0:
+            print('输入的数字为一个整数,且输入的数字为偶数')
+            break
+        else:
+            print('输入的数字为一个整数,且输入的数字为奇数')
+            break
+    elif isfloat(text) == 4:
+        print('输入的数字为小数.')
+        break
+    else:
+        print("您输入的内容不是一个有理数")
+
 
 
 """
