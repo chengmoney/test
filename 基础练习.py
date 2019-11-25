@@ -1,0 +1,66 @@
+# 给用户三次机会，猜想我们程序生成的一个数字 A，
+# 每次用户猜想过后会提示数字是否正确以及用户输入数字是大于还是小于A，
+# 当机会用尽后提示用户已经输掉了游戏
+
+import random
+num = random.randint(1, 10)
+num_in = input("请输入一个1-10之间的数字")
+while True:
+    if num_in.isdigit():
+        for i in range(0, 3):
+            if int(num_in) == num:
+                print("恭喜你,猜对了")
+                break
+            elif int(num_in) > num:
+                print('你猜的数字偏大,你还有{0}次机会'.format((2 - i)))
+                if i == 2:
+                    break
+                num_in = int(input("请重新输入一个数字"))
+            elif int(num_in) < num:
+                print('你猜的数字偏小,你还有{0}次机会'.format((2 - i)))
+                if i == 2:
+                    break
+                num_in = int(input("请重新输入一个数字"))
+        print('游戏结束!!\n系统随机到的数字为%d' % num)
+        break
+    else:
+        print('您输入的不是数字,请输入一个数字.\n请重新输入')
+        num_in = input("请输入一个1-10之间的数字")
+
+# 面向对象的编程
+# 1.用户 -行为输入数字
+
+
+class Users:
+    number_in = 0
+
+    def users_num(self):
+        print('请输入一个数字')
+        self.number_in = input()
+        return self.number_in
+
+    def judgment_number(self):
+        if self.number_in.isdigit():
+            return True
+        else:
+            return False
+
+
+chengyu = Users()  # 创建一个chengyu用户
+
+# 最初的思路  --不能循环输入数字,只能输入两次数字
+chengyu.users_num()  # 用户输入一个数字
+if chengyu.judgment_number():  # 如果用户输入的为一个数字则继续
+    pass
+else:
+    chengyu.users_num()  # 输入不是数字则继续输入
+
+# 后来的思路
+chengyu.users_num()
+while not chengyu.judgment_number():  # 不是数字时候转入循环输入数字
+    chengyu.users_num()
+
+# 2.系统
+
+
+
