@@ -27,14 +27,15 @@ while True:
         print('您输入的不是数字,请输入一个数字.\n请重新输入')
         num_in = input("请输入一个1-10之间的数字")
 
-# 面向对象的编程
+# 面向对象的编程(完整程序在  猜数字_面向对象编程.py 中)
+# 下面为思考过程
 # 1.用户 -行为输入数字
 
 
 class Users:
     number_in = 0
 
-    def users_num(self):
+    def input_num(self):
         print('请输入一个数字')
         self.number_in = input()
         return self.number_in
@@ -49,18 +50,62 @@ class Users:
 chengyu = Users()  # 创建一个chengyu用户
 
 # 最初的思路  --不能循环输入数字,只能输入两次数字
-chengyu.users_num()  # 用户输入一个数字
+chengyu.input_num()  # 用户输入一个数字
 if chengyu.judgment_number():  # 如果用户输入的为一个数字则继续
     pass
 else:
-    chengyu.users_num()  # 输入不是数字则继续输入
+    chengyu.input_num()  # 输入不是数字则继续输入
 
 # 后来的思路
-chengyu.users_num()
+chengyu.input_num()
 while not chengyu.judgment_number():  # 不是数字时候转入循环输入数字
-    chengyu.users_num()
+    chengyu.input_num()
 
 # 2.系统
+import random
+
+
+class System:
+    def __init__(self, limit_down, limit_up, times):  # 初始化函数时候选择猜测游戏的范围和次数
+        self.random_number = random.randint(limit_down, limit_up)
+        self.times = times
+
+    def judge_num(self, number):
+        if self.random_number == number:
+            print('恭喜你猜对了!!')
+            return False
+        elif self.random_number < number:
+            print('输入的数值偏大')
+        else:
+            print('输入的数值偏小')
+
+    def judge_num_times(self, use_time):
+        residual_time = self.times - use_time
+        if residual_time == 0:
+            print('你的次数已用完')
+            return False
+        else:
+            print('你还有%d次机会' % residual_time )
+
+
+chengyu_system = System(1, 10, 3)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
