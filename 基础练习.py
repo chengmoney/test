@@ -90,6 +90,48 @@ class System:
 
 chengyu_system = System(1, 10, 3)
 
+# 写一个程序打印出0-100奇数
+print(range(0, 101, 2))
+
+# 设计一个验证用户密码的程序，用户只有三次机会输入错误，不过如果用户输入的内容包括 “*” 则不计算在内
+code = 'chengyu'
+times = 3
+for i in range(0, times):
+    input_word = input('请输入密码')
+    while True:
+        if '*' in input_word:
+            input_word = input('请输入密码')
+        else:
+            break
+    if input_word == code:
+        print('欢迎!!')
+        break
+    else:
+        print('密码错误,你还有%d次机会.' % (times - i))
+
+# 另外一种写法
+code_one = 'xx01'
+time = 3
+while time:
+    input_one = input('Please enter the password !!')
+    if '*' in input_one:
+        print('输入的密码中不能有*号')
+    elif input_one == code_one:
+        print('Congratulations')
+        break
+    else:
+        print('密码错误!!')
+        time -= 1
+
+
+
+
+
+
+
+
+
+
 
 
 
