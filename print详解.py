@@ -19,5 +19,27 @@ print('圆周率为{:.0f}'.format(math.pi))  # {:.0f}代表输出的数字精度
 print('圆周率为{:.0f}'.format(-1.5))  # -2
 print('圆周率为{0:d}'.format(56))  # 圆周率为56  format()中的数字必须为整数
 
+for i in range(0, 5):
+    print(i, end='')
+    for j in range(0, 5):
+        print(j, end='')
+        if j == 4:
+            print('')
+
+for i in range(0,5):
+    print('*' * (i + 1))
+
+for i in range(0, 5):
+    for j in range(0, i+1):
+        print('*', end='')
+    print('')
+
+
+
+
+
+
+
+
 
 
